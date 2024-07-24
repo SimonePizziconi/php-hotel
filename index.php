@@ -48,18 +48,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PHP HOTEL</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
-<body>  
-
-        <?php foreach ($hotels as $hotel): ?>
-            <ul>
-                <li><?php echo ($hotel['name']); ?></li>
-                <li><?php echo ($hotel['description']); ?></li>
-                <li><?php echo $hotel['parking'] ? 'Sì' : 'No'; ?></li>
-                <li><?php echo ($hotel['vote']); ?></li>
-                <li><?php echo ($hotel['distance_to_center']); ?> km</li>
-            </ul>
-        <?php endforeach; ?>
+<body>
+    
+    <div class="container my-5">
+        <table class="table">
+            <thead>
+                <tr>
+                <th scope="col">Nome</th>
+                <th scope="col">Descrizione</th>
+                <th scope="col">Parcheggio</th>
+                <th scope="col">Voto</th>
+                <th scope="col">Distanza dal Centro</th>
+                </tr>
+            </thead>
+            <?php foreach ($hotels as $hotel): ?>
+            <tbody>
+                <tr>
+                <th><?php echo ($hotel['name']); ?></th>
+                <td><?php echo ($hotel['description']); ?></td>
+                <td><?php echo $hotel['parking'] ? 'Sì' : 'No'; ?></td>
+                <td><?php echo ($hotel['vote']); ?></td>
+                <td><?php echo ($hotel['distance_to_center']); ?> km</td>
+                </tr>
+            </tbody>
+            <?php endforeach; ?>
+        </table>
+    </div>
+            
 
 </body>
 </html>
